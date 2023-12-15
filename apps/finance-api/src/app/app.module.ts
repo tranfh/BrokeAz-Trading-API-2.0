@@ -1,5 +1,6 @@
 import { FinanceModule } from '@brokeaz-trader-2.0/finance';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { CacheModule } from '@nestjs/cache-manager';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -8,6 +9,7 @@ import { StockModule } from './stocks/stock.module';
 
 @Module({
   imports: [
+    CacheModule.register({ isGlobal: true }),
     ConfigModule.forRoot({
       isGlobal: true,
       load: [environment]

@@ -80,34 +80,6 @@
     js-levenshtein "^1.1.6"
     uuid "^9.0.0"
 
-"@apollo/federation@^0.38.1":
-  version "0.38.1"
-  resolved "https://registry.npmjs.org/@apollo/federation/-/federation-0.38.1.tgz"
-  integrity sha512-miifyAEsFgiYKeM3lUHFH6+vKa2vm9dXKSyWVpX6oeJiPblFLe2/iByN3psZQO2sRdVqO1OKYrGXdgKc74XDKw==
-  dependencies:
-    "@apollo/subgraph" "^0.6.1"
-    apollo-server-types "^3.0.2"
-    lodash.xorby "^4.7.0"
-
-"@apollo/protobufjs@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/@apollo/protobufjs/-/protobufjs-1.2.6.tgz"
-  integrity sha512-Wqo1oSHNUj/jxmsVp4iR3I480p6qdqHikn38lKrFhfzcDJ7lwd7Ck7cHRl4JE81tWNArl77xhnG/OkZhxKBYOw==
-  dependencies:
-    "@protobufjs/aspromise" "^1.1.2"
-    "@protobufjs/base64" "^1.1.2"
-    "@protobufjs/codegen" "^2.0.4"
-    "@protobufjs/eventemitter" "^1.1.0"
-    "@protobufjs/fetch" "^1.1.0"
-    "@protobufjs/float" "^1.0.2"
-    "@protobufjs/inquire" "^1.1.0"
-    "@protobufjs/path" "^1.1.2"
-    "@protobufjs/pool" "^1.1.0"
-    "@protobufjs/utf8" "^1.1.0"
-    "@types/long" "^4.0.0"
-    "@types/node" "^10.1.0"
-    long "^4.0.0"
-
 "@apollo/protobufjs@1.2.7":
   version "1.2.7"
   resolved "https://registry.npmjs.org/@apollo/protobufjs/-/protobufjs-1.2.7.tgz"
@@ -175,14 +147,7 @@
     uuid "^9.0.0"
     whatwg-mimetype "^3.0.0"
 
-"@apollo/subgraph@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/@apollo/subgraph/-/subgraph-0.6.1.tgz"
-  integrity sha512-w/6FoubSxuzXSx8uvLE1wEuHZVHRXFyfHPKdM76wX5U/xw82zlUKseVO7wTuVODTcnUzEA30udYeCApUoC3/Xw==
-  dependencies:
-    "@apollo/cache-control-types" "^1.0.2"
-
-"@apollo/subgraph@^2.0.0", "@apollo/subgraph@^2.6.2":
+"@apollo/subgraph@^2.0.0":
   version "2.6.2"
   resolved "https://registry.npmjs.org/@apollo/subgraph/-/subgraph-2.6.2.tgz"
   integrity sha512-TZXCq//fYv++gx8Tsngfa85fH6UGvpyz2xqGh9YIg2e3akeikRW77FRg0tfFXL9CwVmWLukav1hJGsipOklM1g==
@@ -220,14 +185,6 @@
   resolved "https://registry.npmjs.org/@apollo/utils.isnodelike/-/utils.isnodelike-2.0.1.tgz"
   integrity sha512-w41XyepR+jBEuVpoRM715N2ZD0xMD413UiJx8w5xnAZD2ZkSJnMJBoIzauK83kJpSgNuR6ywbV29jG9NmxjK0Q==
 
-"@apollo/utils.keyvaluecache@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-1.0.2.tgz"
-  integrity sha512-p7PVdLPMnPzmXSQVEsy27cYEjVON+SH/Wb7COyW3rQN8+wJgT1nv9jZouYtztWW8ZgTkii5T6tC9qfoDREd4mg==
-  dependencies:
-    "@apollo/utils.logger" "^1.0.0"
-    lru-cache "7.10.1 - 7.13.1"
-
 "@apollo/utils.keyvaluecache@^2.1.0":
   version "2.1.1"
   resolved "https://registry.npmjs.org/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-2.1.1.tgz"
@@ -235,11 +192,6 @@
   dependencies:
     "@apollo/utils.logger" "^2.0.1"
     lru-cache "^7.14.1"
-
-"@apollo/utils.logger@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@apollo/utils.logger/-/utils.logger-1.0.1.tgz"
-  integrity sha512-XdlzoY7fYNK4OIcvMD2G94RoFZbzTQaNP0jozmqqMudmaGo2I/2Jx71xlDJ801mWA/mbYRihyaw6KJii7k5RVA==
 
 "@apollo/utils.logger@^2.0.0", "@apollo/utils.logger@^2.0.1":
   version "2.0.1"
@@ -1753,7 +1705,12 @@
     lodash.omit "4.5.0"
     tslib "2.6.2"
 
-"@nestjs/common@^10.0.0", "@nestjs/common@^10.0.2", "@nestjs/common@^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/common@^9.3.8 || ^10.0.0":
+"@nestjs/cache-manager@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/@nestjs/cache-manager/-/cache-manager-2.1.1.tgz"
+  integrity sha512-oYfRys4Ng0zp2HTUPNjH7gizf4vvG3PQZZ+3yGemb3xrF+p3JxDSK0cDq9NTjHzD5UmhjiyAftB9GkuL+t3r9g==
+
+"@nestjs/common@^10.0.0", "@nestjs/common@^10.0.2", "@nestjs/common@^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/common@^9.0.0 || ^10.0.0", "@nestjs/common@^9.3.8 || ^10.0.0":
   version "10.2.10"
   resolved "https://registry.npmjs.org/@nestjs/common/-/common-10.2.10.tgz"
   integrity sha512-fwAk931rjW8CNH2Mgwawq/7HWHH1dxkOLdcgs7U52ddLk8CtHXjejm1cbNahewlSbNhvlOl7y1STLHutE6sUqw==
@@ -1772,7 +1729,7 @@
     lodash "4.17.21"
     uuid "9.0.0"
 
-"@nestjs/core@^10.0.0", "@nestjs/core@^10.0.2", "@nestjs/core@^9.3.8 || ^10.0.0":
+"@nestjs/core@^10.0.0", "@nestjs/core@^10.0.2", "@nestjs/core@^9.0.0 || ^10.0.0", "@nestjs/core@^9.3.8 || ^10.0.0":
   version "10.2.10"
   resolved "https://registry.npmjs.org/@nestjs/core/-/core-10.2.10.tgz"
   integrity sha512-+ckOI6BPi2ZMHikT9MCG4ctHDc4OnjhoIytrn7f2AYMMXI4bnutJhqyQKc30VDka5x3Wq6QAD57pgSP7y+JjJg==
@@ -2608,11 +2565,6 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-18.16.9.tgz"
   integrity sha512-IeB32oIV4oGArLrd7znD2rkHQ6EDCM+2Sr76dJnrHwv9OHBTTM6nuDLK9bmikXzPa0ZlWMWtRGo/Uw4mrzQedA==
 
-"@types/node@^10.1.0":
-  version "10.17.60"
-  resolved "https://registry.npmjs.org/@types/node/-/node-10.17.60.tgz"
-  integrity sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==
-
 "@types/parse-json@^4.0.0":
   version "4.0.2"
   resolved "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.2.tgz"
@@ -3082,30 +3034,6 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-reporting-protobuf@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/apollo-reporting-protobuf/-/apollo-reporting-protobuf-3.4.0.tgz"
-  integrity sha512-h0u3EbC/9RpihWOmcSsvTW2O6RXVaD/mPEjfrPkxRPTEPWqncsgOoRJw+wih4OqfH3PvTJvoEIf4LwKrUaqWog==
-  dependencies:
-    "@apollo/protobufjs" "1.2.6"
-
-apollo-server-env@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.npmjs.org/apollo-server-env/-/apollo-server-env-4.2.1.tgz"
-  integrity sha512-vm/7c7ld+zFMxibzqZ7SSa5tBENc4B0uye9LTfjJwGoQFY5xsUPH5FpO5j0bMUDZ8YYNbrF9SNtzc5Cngcr90g==
-  dependencies:
-    node-fetch "^2.6.7"
-
-apollo-server-types@^3.0.2:
-  version "3.8.0"
-  resolved "https://registry.npmjs.org/apollo-server-types/-/apollo-server-types-3.8.0.tgz"
-  integrity sha512-ZI/8rTE4ww8BHktsVpb91Sdq7Cb71rdSkXELSwdSR0eXu600/sY+1UXhTWdiJvk+Eq5ljqoHLwLbY2+Clq2b9A==
-  dependencies:
-    "@apollo/utils.keyvaluecache" "^1.0.1"
-    "@apollo/utils.logger" "^1.0.0"
-    apollo-reporting-protobuf "^3.4.0"
-    apollo-server-env "^4.2.1"
-
 append-field@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/append-field/-/append-field-1.0.0.tgz"
@@ -3509,6 +3437,15 @@ bytes@3.1.2:
   version "3.1.2"
   resolved "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
+
+cache-manager@^5.3.1, cache-manager@<=5:
+  version "5.3.1"
+  resolved "https://registry.npmjs.org/cache-manager/-/cache-manager-5.3.1.tgz"
+  integrity sha512-9HP6nc1ZqyZgcVEpy5XS2ns9MYE6cPEM6InA1wQhR6M7GviJzLH2NTFYnf3NEfRmLE351NCSkDo2VISX8dlG+w==
+  dependencies:
+    lodash.clonedeep "^4.5.0"
+    lru-cache "^10.0.2"
+    promise-coalesce "^1.1.1"
 
 call-bind@^1.0.0:
   version "1.0.5"
@@ -4950,7 +4887,7 @@ graphql-ws@5.14.2:
   resolved "https://registry.npmjs.org/graphql-ws/-/graphql-ws-5.14.2.tgz"
   integrity sha512-LycmCwhZ+Op2GlHz4BZDsUYHKRiiUz+3r9wbhBATMETNlORQJAaFlAgTFoeRh6xQoQegwYwIylVD1Qns9/DA3w==
 
-"graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^15.3.0 || ^16.0.0", "graphql@^15.7.2 || ^16.0.0", "graphql@^15.8.0 || ^16.0.0", graphql@^16.5.0, graphql@^16.6.0, graphql@^16.8.1, "graphql@>=0.11 <=16", "graphql@14.x || 15.x || 16.x":
+"graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^15.7.2 || ^16.0.0", graphql@^16.5.0, graphql@^16.6.0, graphql@^16.8.1, "graphql@>=0.11 <=16", "graphql@14.x || 15.x || 16.x":
   version "16.8.1"
   resolved "https://registry.npmjs.org/graphql/-/graphql-16.8.1.tgz"
   integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
@@ -5946,6 +5883,11 @@ locate-path@^7.1.0:
   dependencies:
     p-locate "^6.0.0"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
@@ -5975,11 +5917,6 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
-
-lodash.xorby@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.npmjs.org/lodash.xorby/-/lodash.xorby-4.7.0.tgz"
-  integrity sha512-gYiD6nvuQy0AEkMoUju+t4f4Rn18fjsLB/7x7YZFqtFT9kmegRLrj/uGEQVyVDy7otTmSrIMXNOk2wwuLcfHCQ==
 
 lodash@4.17.21:
   version "4.17.21"
@@ -6016,6 +5953,11 @@ lru-cache@^10.0.1:
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.1.0.tgz"
   integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
 
+lru-cache@^10.0.2:
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.1.0.tgz"
+  integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
+
 lru-cache@^5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz"
@@ -6039,11 +5981,6 @@ lru-cache@^7.14.1:
   version "7.18.3"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-7.18.3.tgz"
   integrity sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==
-
-"lru-cache@7.10.1 - 7.13.1":
-  version "7.13.1"
-  resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-7.13.1.tgz"
-  integrity sha512-CHqbAq7NFlW3RSnoWXLJBxCWaZVBrfa9UEHId2M3AW8iEBurbqduNexEUCGc3SHc6iCYXNJCDi903LajSVAEPQ==
 
 luxon@^3.4.4:
   version "3.4.4"
@@ -6997,6 +6934,11 @@ process@^0.11.10:
   resolved "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
+promise-coalesce@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/promise-coalesce/-/promise-coalesce-1.1.1.tgz"
+  integrity sha512-k7+VaIwZc5dRfSF6RELqRY1+LCmcCkrnuNV9HzIpA6iwRHKke+j9yb0LBTTHQ2RRgf6AlMl9TntuTzcgV/BZwg==
+
 prompts@^2.0.1:
   version "2.4.2"
   resolved "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz"
@@ -7293,7 +7235,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@^7.1.0, rxjs@^7.8.0, rxjs@7.8.1:
+rxjs@^7.0.0, rxjs@^7.1.0, rxjs@^7.8.0, rxjs@7.8.1:
   version "7.8.1"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
