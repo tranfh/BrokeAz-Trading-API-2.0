@@ -47,6 +47,14 @@ export class AlphavantageClient {
         statusText: response.statusText
       });
 
+      if (response.data.Information) {
+        this.logger.warn({
+          msg: `Alpha Vantage Error: ${response.data.Information}`
+        });
+        this.logger.error({
+          msg: `Alpha Vantage API Error: Rate Limit Exceeded`
+        });
+      }
       return response.data;
     } catch (err) {
       this.logger.error({ msg: `Error logging request: ${err}` });
