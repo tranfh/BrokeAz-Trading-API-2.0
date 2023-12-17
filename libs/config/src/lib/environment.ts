@@ -20,7 +20,18 @@ export const config = {
     baseUrl: 'https://www.alphavantage.co/query?'
   },
   reddit: {
-    subreddits: ['wallstreetbets', 'stocks', 'pennystocks', 'investing'],
+    subreddits: [
+      'wallstreetbets',
+      'stocks',
+      'pennystocks',
+      'investing',
+      'stockmarket',
+      'options',
+      'robinhood',
+      'weedstocks',
+      'trading',
+      'robinhoodpennystocks'
+    ],
     baseUrl: 'https://www.reddit.com/r/',
     userAgent: process.env.REDDIT_USER_AGENT ?? 'demo',
     clientId: process.env.REDDIT_CLIENT_ID ?? 'demo',

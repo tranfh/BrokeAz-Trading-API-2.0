@@ -4,7 +4,6 @@ import axios, { AxiosInstance } from 'axios';
 import { DateTime, Interval } from 'luxon';
 import { RedditGetResponse } from './dto/reddit-get-response';
 import { RedditPost } from './dto/reddit-post';
-import Snoowrap = require('snoowrap');
 
 @Injectable()
 export class ScraperService {
@@ -15,7 +14,6 @@ export class ScraperService {
   private readonly username: string;
   private readonly password: string;
   private readonly subreddits: string[];
-  private readonly redditClient: Snoowrap;
   private readonly httpClient: AxiosInstance;
 
   constructor(/* @Inject() */ private configService: ConfigService) {
@@ -26,25 +24,18 @@ export class ScraperService {
     this.password = this.configService.get<string>('reddit.password');
     this.subreddits = this.configService.get<string[]>('reddit.subreddits');
 
-    this.redditClient = new Snoowrap({
-      userAgent: this.userAgent,
-      clientId: this.clientId,
-      clientSecret: this.clientSecret,
-      username: this.username,
-      password: this.password
-    });
     this.httpClient = axios.create({
       baseURL: this.configService.get<string>('reddit.baseUrl'),
       headers: { 'Content-Type': 'application/json' }
     });
   }
+
   public async trendingOnReddit(): Promise<string[]> {
     const promises = this.subreddits.map((subreddit) =>
       this.request<RedditGetResponse>(subreddit)
     );
     const resolved = await Promise.all(promises);
     const posts: RedditPost[] = resolved.flatMap(RedditPost.toModel);
-
     const postsWithinLastMonth = posts.filter((post) => {
       const start = DateTime.now().minus({ months: 1 });
       const end = DateTime.now();
@@ -59,10 +50,17 @@ export class ScraperService {
   private parseContent(posts: RedditPost[]): string[] {
     const tickerCounts = new Map<string, number>();
     for (const post of posts) {
-      const regex = /\$([A-Z]{1,5})/g;
-      const matches = post.content.match(regex);
-      if (matches) {
-        for (const match of matches) {
+      const regex = /\$([A-Z]{1,4})\b/g;
+      const contentMatches = post.content.match(regex);
+      const titleMatches = post.title.match(regex);
+      if (contentMatches) {
+        for (const match of contentMatches) {
+          const count = tickerCounts.get(match) || 0;
+          tickerCounts.set(match, count + 1);
+        }
+      }
+      if (titleMatches) {
+        for (const match of titleMatches) {
           const count = tickerCounts.get(match) || 0;
           tickerCounts.set(match, count + 1);
         }
