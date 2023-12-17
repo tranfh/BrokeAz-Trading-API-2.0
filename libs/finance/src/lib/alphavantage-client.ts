@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import axios, { AxiosInstance } from 'axios';
 import { ConfigService } from '@nestjs/config';
+import axios, { AxiosInstance } from 'axios';
 import axiosRetry from 'axios-retry';
 import { AlphaVFunctions } from './alphav-functions';
 
@@ -35,6 +35,7 @@ export class AlphavantageClient {
         data as Record<string, string>
       ).toString();
 
+      console.log(params);
       const response = await this.httpClient.get(
         `&function=${fn}&${params}&apikey=${this.apiKey}`
       );

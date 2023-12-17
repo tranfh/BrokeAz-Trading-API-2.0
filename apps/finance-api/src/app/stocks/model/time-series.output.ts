@@ -22,6 +22,10 @@ export class TimeSeriesOutput {
   public volume: string;
 
   public static fromModel(timeSeries: TimeSeries): TimeSeriesOutput {
+    if (!timeSeries) {
+      return null;
+    }
+
     const output = new TimeSeriesOutput();
     output.timestamp = timeSeries.timestamp;
     output.open = timeSeries.open;

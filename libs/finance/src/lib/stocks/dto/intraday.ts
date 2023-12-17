@@ -15,8 +15,17 @@ export class Intraday {
   public timeSeries: TimeSeries[];
 
   public static toModel(response: IntradayGetResponse): Intraday {
+    if (!response) {
+      return;
+    }
+
     const model = new Intraday();
     const metadata = response['Meta Data'];
+
+    if (!metadata) {
+      return null;
+    }
+
     model.symbol = metadata['2. Symbol'];
     model.interval = metadata['4. Interval'];
     const timeSeries = this.createTimeSeries(response, model.interval);
@@ -45,7 +54,7 @@ export class Intraday {
       newTimeSeries.volume =
         response[`Time Series (${interval})`][timestamp]['5. volume'];
 
-      timeSeriesArray.push(newTimeSeries);
+      timeSeriesArray.unshift(newTimeSeries);
     }
 
     return timeSeriesArray;

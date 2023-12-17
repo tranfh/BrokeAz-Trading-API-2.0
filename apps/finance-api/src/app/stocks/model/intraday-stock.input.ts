@@ -1,11 +1,8 @@
-import { IntradayGetRequest, OutputSize } from '@brokeaz-trader-2.0/finance';
+import { IntradayInput, OutputSize } from '@brokeaz-trader-2.0/finance';
 import { Field, InputType } from '@nestjs/graphql';
 
-@InputType('IntradayInput')
-export class IntradayInput {
-  @Field()
-  public interval: string;
-
+@InputType('IntradayStockInput')
+export class IntradayStockInput {
   @Field()
   public symbol: string;
 
@@ -21,9 +18,12 @@ export class IntradayInput {
   @Field(() => String, { nullable: true })
   public outputSize?: OutputSize;
 
-  public static toModel(input: IntradayInput): IntradayGetRequest {
+  public static toModel(
+    input: IntradayStockInput,
+    interval: string
+  ): IntradayInput {
     const request = new IntradayInput();
-    request.interval = input.interval;
+    request.interval = interval;
     request.symbol = input.symbol;
     request.month = input.month;
     request.adjusted = input.adjusted;
