@@ -8,7 +8,6 @@ export class Trending {
 
   public static toModel(response: TrendingGetResponse): Trending {
     const trending = new Trending();
-    console.log(response, 'top gainers');
     trending.topGainers = response.top_gainers
       ? response.top_gainers.map((result) => {
           const stockPerformance = new StockPerformance();
@@ -42,7 +41,6 @@ export class Trending {
           return stockPerformance;
         })
       : [];
-    console.log(trending);
     return trending;
   }
 }

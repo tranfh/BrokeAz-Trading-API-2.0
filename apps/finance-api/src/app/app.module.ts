@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import environment from './environments/environment';
+import { FinTwitModule } from './fintwit/fintwit.module';
 import { StockModule } from './stocks/stock.module';
 
 @Module({
@@ -23,7 +24,8 @@ import { StockModule } from './stocks/stock.module';
       playground: true
     }),
     FinanceModule,
-    StockModule
+    StockModule,
+    FinTwitModule
   ],
   providers: [FinanceModule]
 })

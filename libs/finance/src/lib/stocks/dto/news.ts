@@ -21,7 +21,6 @@ export class News {
     const news = new News();
     news.newsItems = response.feed
       ? response.feed.map((result) => {
-          console.log('result \n\n', result);
           const newsItem = new NewsItem();
           newsItem.title = result.title;
           newsItem.url = result.url;

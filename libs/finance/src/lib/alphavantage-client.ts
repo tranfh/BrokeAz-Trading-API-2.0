@@ -35,7 +35,6 @@ export class AlphavantageClient {
         data as Record<string, string>
       ).toString();
 
-      console.log(params);
       const response = await this.httpClient.get(
         `&function=${fn}&${params}&apikey=${this.apiKey}`
       );

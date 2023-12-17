@@ -18,5 +18,14 @@ export const config = {
   alphavantage: {
     apiKey: process.env.ALPHAVANTAGE_API_KEY ?? 'demo',
     baseUrl: 'https://www.alphavantage.co/query?'
+  },
+  reddit: {
+    subreddits: ['wallstreetbets', 'stocks', 'pennystocks', 'investing'],
+    baseUrl: 'https://www.reddit.com/r/',
+    userAgent: process.env.REDDIT_USER_AGENT ?? 'demo',
+    clientId: process.env.REDDIT_CLIENT_ID ?? 'demo',
+    clientSecret: process.env.REDDIT_APP_SECRET ?? 'demo',
+    username: process.env.REDDIT_USERNAME ?? 'demo',
+    password: process.env.REDDIT_PASSWORD ?? 'demo'
   }
 };

@@ -39,7 +39,6 @@ export class StockResolver {
       response
     );
 
-    console.log(response);
     if (result) {
       await this.cacheManager.set(cacheKey, JSON.stringify(result), 6000);
       this.logger.debug(`Cache Set for ${cacheKey}`);
@@ -161,7 +160,6 @@ export class StockResolver {
       return JSON.parse(cachedValue);
     }
     const response = await this.stocksService.fetchQuote(symbol);
-    console.log(response);
     const result = StockQuoteOutput.fromModel(response);
     if (result) {
       await this.cacheManager.set(cacheKey, JSON.stringify(result), 6000 * 15);
